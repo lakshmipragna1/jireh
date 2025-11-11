@@ -1,0 +1,44 @@
+/* src/index.css */
+
+/*
+  Global Reset:
+  This standard practice ensures no default margin/padding
+  on the body or html elements causes unwanted scrollbars.
+*/
+html, body, #root {
+  /* Prevent horizontal scrolling by explicitly hiding overflow on the X-axis */
+  overflow-x: hidden; 
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure images do not stretch past their containers */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optional: Smooth scrolling for anchor links (e.g., #services) */
+html {
+  scroll-behavior: smooth;
+}
+/* Keyframes for horizontal scrolling animation */
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Class to apply the animation */
+.announcement-marquee {
+  animation: scrollText 40s linear infinite;
+  -webkit-animation: scrollText 40s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+  display: inline-flex;
+  align-items: center;
+}
